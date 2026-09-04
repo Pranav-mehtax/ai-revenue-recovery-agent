@@ -1,0 +1,321 @@
+timestamp,payment_id,amount,failure_type,recovery_probability,expected_recovery_value,priority,rag_sources,rag_context,llm_recommended_action,llm_explanation,llm_status,llm_error,guardrail_allowed,final_action,guardrail_reason,execution_status,execution_message,recovered_amount
+2026-09-02T12:30:06.175467+00:00,PAY_004769,60063.19,NETWORK_ERROR,0.7748,46537.11,HIGH,"[""merchant_policies.md"", ""failure_reasons.md"", ""failure_reasons.md""]","[{""source"": ""merchant_policies.md"", ""text"": ""# Merchant Recovery Policies"", ""score"": 0.41001228405037105}, {""source"": ""failure_reasons.md"", ""text"": ""## NETWORK_ERROR\n\nThe payment could not be completed because of a temporary\nnetwork or connectivity issue.\n\nRecommended approach:\nRetry the payment after a short delay.\n\nRecovery potential:\nHigh.\n\n---"", ""score"": 0.20425025882701986}, {""source"": ""failure_reasons.md"", ""text"": ""# Payment Failure Reasons"", ""score"": 0.2037007132352567}]",MANUAL_REVIEW,"FAILURE_EXPLANATION:
+AI recommendation unavailable.
+
+RECOMMENDED_ACTION:
+MANUAL_REVIEW
+
+REASONING:
+Safe fallback because Gemini could not provide a recommendation.
+
+RISK:
+Do not automate while AI reasoning is unavailable.
+
+AUTOMATIC_ACTION:
+NO",FALLBACK,"
+All Gemini model attempts failed.
+
+Last error:
+[WinError 10013] An attempt was made to access a socket in a way forbidden by its access permissions",False,MANUAL_REVIEW,Invalid action for network failure.,MANUAL_REVIEW,Payment requires manual review.,0.0
+2026-09-02T12:30:30.555474+00:00,PAY_004769,60063.19,NETWORK_ERROR,0.7748,46537.11,HIGH,"[""merchant_policies.md"", ""failure_reasons.md"", ""failure_reasons.md""]","[{""source"": ""merchant_policies.md"", ""text"": ""# Merchant Recovery Policies"", ""score"": 0.41001228405037105}, {""source"": ""failure_reasons.md"", ""text"": ""## NETWORK_ERROR\n\nThe payment could not be completed because of a temporary\nnetwork or connectivity issue.\n\nRecommended approach:\nRetry the payment after a short delay.\n\nRecovery potential:\nHigh.\n\n---"", ""score"": 0.20425025882701986}, {""source"": ""failure_reasons.md"", ""text"": ""# Payment Failure Reasons"", ""score"": 0.2037007132352567}]",RETRY,"FAILURE_EXPLANATION: test
+RECOMMENDED_ACTION: RETRY
+REASONING: test
+RISK: test
+AUTOMATIC_ACTION: YES",SUCCESS,,True,RETRY,Action passed all guardrail checks.,RECOVERED,Payment successfully recovered after retry.,60063.19
+2026-09-02T12:30:30.704311+00:00,PAY_004769,60063.19,NETWORK_ERROR,0.7748,46537.11,HIGH,"[""merchant_policies.md"", ""failure_reasons.md"", ""failure_reasons.md""]","[{""source"": ""merchant_policies.md"", ""text"": ""# Merchant Recovery Policies"", ""score"": 0.41001228405037105}, {""source"": ""failure_reasons.md"", ""text"": ""## NETWORK_ERROR\n\nThe payment could not be completed because of a temporary\nnetwork or connectivity issue.\n\nRecommended approach:\nRetry the payment after a short delay.\n\nRecovery potential:\nHigh.\n\n---"", ""score"": 0.20425025882701986}, {""source"": ""failure_reasons.md"", ""text"": ""# Payment Failure Reasons"", ""score"": 0.2037007132352567}]",RETRY,"FAILURE_EXPLANATION: test
+RECOMMENDED_ACTION: RETRY
+REASONING: test
+RISK: test
+AUTOMATIC_ACTION: YES",SUCCESS,,True,RETRY,Action passed all guardrail checks.,FAILED,Payment retry failed.,0.0
+2026-09-02T12:30:30.708431+00:00,PAY_017627,37491.29,NETWORK_ERROR,0.7879,29539.0,MEDIUM,"[""merchant_policies.md"", ""failure_reasons.md"", ""failure_reasons.md""]","[{""source"": ""merchant_policies.md"", ""text"": ""# Merchant Recovery Policies"", ""score"": 0.41001228405037105}, {""source"": ""failure_reasons.md"", ""text"": ""## NETWORK_ERROR\n\nThe payment could not be completed because of a temporary\nnetwork or connectivity issue.\n\nRecommended approach:\nRetry the payment after a short delay.\n\nRecovery potential:\nHigh.\n\n---"", ""score"": 0.20425025882701986}, {""source"": ""failure_reasons.md"", ""text"": ""# Payment Failure Reasons"", ""score"": 0.2037007132352567}]",RETRY,"FAILURE_EXPLANATION: test
+RECOMMENDED_ACTION: RETRY
+REASONING: test
+RISK: test
+AUTOMATIC_ACTION: YES",SUCCESS,,True,RETRY,Action passed all guardrail checks.,RECOVERED,Payment successfully recovered after retry.,37491.29
+2026-09-02T12:39:51.860124+00:00,PAY_004769,60063.19,NETWORK_ERROR,0.7748,46537.11,HIGH,"[""merchant_policies.md"", ""failure_reasons.md"", ""failure_reasons.md""]","[{""source"": ""merchant_policies.md"", ""text"": ""# Merchant Recovery Policies"", ""score"": 0.41001228405037105}, {""source"": ""failure_reasons.md"", ""text"": ""## NETWORK_ERROR\n\nThe payment could not be completed because of a temporary\nnetwork or connectivity issue.\n\nRecommended approach:\nRetry the payment after a short delay.\n\nRecovery potential:\nHigh.\n\n---"", ""score"": 0.20425025882701986}, {""source"": ""failure_reasons.md"", ""text"": ""# Payment Failure Reasons"", ""score"": 0.2037007132352567}]",RETRY,"FAILURE_EXPLANATION: The payment failed due to a network error, indicating a temporary issue with the connection or system during the transaction.
+
+RECOMMENDED_ACTION: RETRY
+
+REASONING: The payment failed due to a `NETWORK_ERROR`. According to the retrieved knowledge, `RETRY` is the best-suited action for `NETWORK_ERROR` failures. The ML recovery probability is high at 77.48%, and this payment has not been retried before (retry count is 0). This approach has a good chance of success without requiring customer intervention.
+
+RISK: Low. Network errors are often transient, making a retry a safe and effective first step.
+
+AUTOMATIC_ACTION: YES",SUCCESS,,True,RETRY,Action passed all guardrail checks.,FAILED,Payment retry failed.,0.0
+2026-09-02T12:39:57.600557+00:00,PAY_017627,37491.29,NETWORK_ERROR,0.7879,29539.0,MEDIUM,"[""merchant_policies.md"", ""failure_reasons.md"", ""failure_reasons.md""]","[{""source"": ""merchant_policies.md"", ""text"": ""# Merchant Recovery Policies"", ""score"": 0.41001228405037105}, {""source"": ""failure_reasons.md"", ""text"": ""## NETWORK_ERROR\n\nThe payment could not be completed because of a temporary\nnetwork or connectivity issue.\n\nRecommended approach:\nRetry the payment after a short delay.\n\nRecovery potential:\nHigh.\n\n---"", ""score"": 0.20425025882701986}, {""source"": ""failure_reasons.md"", ""text"": ""# Payment Failure Reasons"", ""score"": 0.2037007132352567}]",RETRY,"FAILURE_EXPLANATION: The payment failed due to a transient network error during processing.
+
+RECOMMENDED_ACTION: RETRY
+
+REASONING: The retrieved knowledge explicitly states that 'RETRY' is best suited for 'NETWORK_ERROR' failure types. The payment has not been retried yet (retry count: 0), and the ML model indicates a high recovery probability of 78.79%, resulting in a significant expected recovery value of ₹29,539.00. The customer's historical success rate is also high at 92.31%, further supporting the likelihood of a successful retry. This aligns with the policy to retry for network-related failures and to avoid it for fraud or duplicate payments, which are not present here.
+
+RISK: Low. Network errors are typically transient, and a retry is a standard and effective first step with a high probability of success in this scenario.
+
+AUTOMATIC_ACTION: YES",SUCCESS,,True,RETRY,Action passed all guardrail checks.,RECOVERED,Payment successfully recovered after retry.,37491.29
+2026-09-02T12:40:06.309907+00:00,PAY_007811,46180.49,TIMEOUT,0.621,28677.75,MEDIUM,"[""merchant_policies.md"", ""failure_reasons.md"", ""failure_reasons.md""]","[{""source"": ""merchant_policies.md"", ""text"": ""# Merchant Recovery Policies"", ""score"": 0.41001228405037105}, {""source"": ""failure_reasons.md"", ""text"": ""# Payment Failure Reasons"", ""score"": 0.2037007132352567}, {""source"": ""failure_reasons.md"", ""text"": ""## TIMEOUT\n\nThe payment request exceeded the allowed processing time.\n\nRecommended approach:\nRetry after a short delay.\n\nRecovery potential:\nHigh.\n\n---"", ""score"": 0.19920992128705362}]",RETRY,"FAILURE_EXPLANATION:
+The payment failed due to a TIMEOUT, which typically indicates a temporary communication issue between the payment platform and the customer's bank during the transaction.
+
+RECOMMENDED_ACTION:
+RETRY
+
+REASONING:
+The retrieved knowledge explicitly states that RETRY is ""Best suited for: - TIMEOUT"". The payment failed on the first attempt (Retry count: 0), and the ML model estimates a 62.10% recovery probability, indicating a good chance of success with a retry. Given the high customer and merchant historical success rates, the timeout is likely a transient issue. This action aims to recover a significant amount (₹46,180.49) with a good expected recovery value.
+
+RISK:
+Low risk. Retrying a TIMEOUT payment is generally safe as it addresses a likely transient issue without customer interaction. There is no indication of fraud or duplicate payment risk.
+
+AUTOMATIC_ACTION:
+YES",SUCCESS,,True,RETRY,Action passed all guardrail checks.,RECOVERED,Payment successfully recovered after retry.,46180.49
+2026-09-02T12:40:11.665652+00:00,PAY_018980,39635.41,NETWORK_ERROR,0.7173,28431.17,MEDIUM,"[""merchant_policies.md"", ""failure_reasons.md"", ""failure_reasons.md""]","[{""source"": ""merchant_policies.md"", ""text"": ""# Merchant Recovery Policies"", ""score"": 0.38638184031186057}, {""source"": ""failure_reasons.md"", ""text"": ""## EXPIRED_CARD\n\nThe customer's card has expired.\n\nRecommended approach:\nAsk the customer to update their payment method or provide\na payment link.\n\n---"", ""score"": 0.21050667556498046}, {""source"": ""failure_reasons.md"", ""text"": ""## NETWORK_ERROR\n\nThe payment could not be completed because of a temporary\nnetwork or connectivity issue.\n\nRecommended approach:\nRetry the payment after a short delay.\n\nRecovery potential:\nHigh.\n\n---"", ""score"": 0.19247860115347765}]",RETRY,"FAILURE_EXPLANATION:
+The payment failed due to a NETWORK_ERROR, indicating a temporary issue with the payment network rather than a problem with the payment method itself.
+
+RECOMMENDED_ACTION:
+RETRY
+
+REASONING:
+The retrieved knowledge explicitly states that `RETRY` is ""Best suited for: NETWORK_ERROR"". This payment failed due to a `NETWORK_ERROR` and has a `retry count` of 0, meaning no previous attempts have been made. The `ML recovery probability` is high at 71.73%, and the customer and merchant historical success rates are also strong, suggesting a high likelihood of success upon retry.
+
+RISK:
+Low. Retrying a `NETWORK_ERROR` is generally a safe and effective strategy, as these failures are often transient. Given the high recovery probability and no indication of fraud or duplication, the risk associated with this action is minimal.
+
+AUTOMATIC_ACTION:
+YES",SUCCESS,,True,RETRY,Action passed all guardrail checks.,RECOVERED,Payment successfully recovered after retry.,39635.41
+2026-09-02T12:40:18.548182+00:00,PAY_010028,41656.77,TIMEOUT,0.6778,28235.53,MEDIUM,"[""merchant_policies.md"", ""failure_reasons.md"", ""failure_reasons.md""]","[{""source"": ""merchant_policies.md"", ""text"": ""# Merchant Recovery Policies"", ""score"": 0.41001228405037105}, {""source"": ""failure_reasons.md"", ""text"": ""# Payment Failure Reasons"", ""score"": 0.2037007132352567}, {""source"": ""failure_reasons.md"", ""text"": ""## TIMEOUT\n\nThe payment request exceeded the allowed processing time.\n\nRecommended approach:\nRetry after a short delay.\n\nRecovery potential:\nHigh.\n\n---"", ""score"": 0.19920992128705362}]",RETRY,"FAILURE_EXPLANATION:
+The payment failed due to a timeout, indicating a temporary communication issue or delay in processing.
+
+RECOMMENDED_ACTION:
+RETRY
+
+REASONING:
+The payment failed with a `TIMEOUT` error, and the retrieved knowledge explicitly states that `RETRY` is ""Best suited for: - TIMEOUT"". This is the first attempt to recover the payment (Retry count: 0). Given the high ML recovery probability of 67.78% and a substantial expected recovery value of ₹28,235.53, retrying this payment is a highly advisable recovery action. The failure type is not `SUSPECTED_FRAUD` or `DUPLICATE`, which are conditions where automatic retry should be avoided.
+
+RISK:
+Low. Retrying a `TIMEOUT` failure often resolves temporary connectivity issues without adverse effects. There is no indication of fraud or a duplicate transaction.
+
+AUTOMATIC_ACTION:
+YES",SUCCESS,,True,RETRY,Action passed all guardrail checks.,RECOVERED,Payment successfully recovered after retry.,41656.77
+2026-09-02T12:40:24.681043+00:00,PAY_008033,41114.23,TIMEOUT,0.6726,27653.13,MEDIUM,"[""merchant_policies.md"", ""failure_reasons.md"", ""failure_reasons.md""]","[{""source"": ""merchant_policies.md"", ""text"": ""# Merchant Recovery Policies"", ""score"": 0.41001228405037105}, {""source"": ""failure_reasons.md"", ""text"": ""# Payment Failure Reasons"", ""score"": 0.2037007132352567}, {""source"": ""failure_reasons.md"", ""text"": ""## TIMEOUT\n\nThe payment request exceeded the allowed processing time.\n\nRecommended approach:\nRetry after a short delay.\n\nRecovery potential:\nHigh.\n\n---"", ""score"": 0.19920992128705362}]",RETRY,"FAILURE_EXPLANATION:
+The payment failed due to a TIMEOUT, indicating that the system did not receive a timely response from the payment gateway or the customer's bank to confirm the transaction.
+
+RECOMMENDED_ACTION:
+RETRY
+
+REASONING:
+The payment failure type is TIMEOUT, and the retrieved knowledge explicitly states that RETRY is ""Best suited for: - TIMEOUT"". The ML recovery probability is 67.26%, which is a strong indicator for potential recovery, and the retry count is 0, meaning no previous attempts have been made. This action is not subject to the ""Avoid when"" conditions (SUSPECTED_FRAUD or DUPLICATE).
+
+RISK:
+Low. A retry for a TIMEOUT error often succeeds as it can resolve transient network or system issues.
+
+AUTOMATIC_ACTION:
+YES",SUCCESS,,True,RETRY,Action passed all guardrail checks.,FAILED,Payment retry failed.,0.0
+2026-09-02T12:45:40.520836+00:00,PAY_004769,60063.19,NETWORK_ERROR,0.7748,46537.11,HIGH,"[""merchant_policies.md"", ""failure_reasons.md"", ""failure_reasons.md""]","[{""source"": ""merchant_policies.md"", ""text"": ""# Merchant Recovery Policies"", ""score"": 0.41001228405037105}, {""source"": ""failure_reasons.md"", ""text"": ""## NETWORK_ERROR\n\nThe payment could not be completed because of a temporary\nnetwork or connectivity issue.\n\nRecommended approach:\nRetry the payment after a short delay.\n\nRecovery potential:\nHigh.\n\n---"", ""score"": 0.20425025882701986}, {""source"": ""failure_reasons.md"", ""text"": ""# Payment Failure Reasons"", ""score"": 0.2037007132352567}]",RETRY,"FAILURE_EXPLANATION:
+The payment failed due to a transient NETWORK_ERROR, indicating a temporary issue with communication during the transaction.
+
+RECOMMENDED_ACTION:
+RETRY
+
+REASONING:
+The retrieved knowledge explicitly states that RETRY is best suited for NETWORK_ERROR failure types. Given that this is the first attempt (retry count 0) and the ML recovery probability is high at 77.48% (leading to a significant expected recovery value of ₹46,537.11), a retry is the most appropriate and effective action. There are no contraindications such as SUSPECTED_FRAUD or DUPLICATE payments.
+
+RISK:
+Low risk, as network errors are often transient and a retry has a high probability of success without adverse effects on the customer or merchant.
+
+AUTOMATIC_ACTION:
+YES",SUCCESS,,True,RETRY,Action passed all guardrail checks.,RECOVERED,Payment successfully recovered after retry.,60063.19
+2026-09-02T12:48:21.205584+00:00,PAY_004769,60063.19,NETWORK_ERROR,0.7748,46537.11,HIGH,"[""merchant_policies.md"", ""failure_reasons.md"", ""failure_reasons.md""]","[{""source"": ""merchant_policies.md"", ""text"": ""# Merchant Recovery Policies"", ""score"": 0.41001228405037105}, {""source"": ""failure_reasons.md"", ""text"": ""## NETWORK_ERROR\n\nThe payment could not be completed because of a temporary\nnetwork or connectivity issue.\n\nRecommended approach:\nRetry the payment after a short delay.\n\nRecovery potential:\nHigh.\n\n---"", ""score"": 0.20425025882701986}, {""source"": ""failure_reasons.md"", ""text"": ""# Payment Failure Reasons"", ""score"": 0.2037007132352567}]",RETRY,"FAILURE_EXPLANATION: The payment failed due to a NETWORK_ERROR, indicating a temporary connectivity or system issue rather than an inherent problem with the payment method or customer funds.
+
+RECOMMENDED_ACTION: RETRY
+
+REASONING: The payment failed due to a NETWORK_ERROR, which the retrieved knowledge explicitly identifies as a situation ""Best suited for: RETRY"". The ML model indicates a high recovery probability of 77.48% and a significant expected recovery value of ₹46,537.11. This is the first retry attempt, and the customer and merchant historical success rates are good, further supporting a retry.
+
+RISK: Low risk. Network errors are typically transient, and a retry has a high probability of success without adverse effects on the customer experience or fraud risk.
+
+AUTOMATIC_ACTION: YES",SUCCESS,,True,RETRY,Action passed all guardrail checks.,FAILED,Payment retry failed.,0.0
+2026-09-02T12:48:29.735490+00:00,PAY_017627,37491.29,NETWORK_ERROR,0.7879,29539.0,MEDIUM,"[""merchant_policies.md"", ""failure_reasons.md"", ""failure_reasons.md""]","[{""source"": ""merchant_policies.md"", ""text"": ""# Merchant Recovery Policies"", ""score"": 0.41001228405037105}, {""source"": ""failure_reasons.md"", ""text"": ""## NETWORK_ERROR\n\nThe payment could not be completed because of a temporary\nnetwork or connectivity issue.\n\nRecommended approach:\nRetry the payment after a short delay.\n\nRecovery potential:\nHigh.\n\n---"", ""score"": 0.20425025882701986}, {""source"": ""failure_reasons.md"", ""text"": ""# Payment Failure Reasons"", ""score"": 0.2037007132352567}]",RETRY,"FAILURE_EXPLANATION:
+The payment failed due to a NETWORK_ERROR, indicating a temporary issue with the connection or service provider.
+
+RECOMMENDED_ACTION:
+RETRY
+
+REASONING:
+The retrieved knowledge explicitly states that 'RETRY' is best suited for 'NETWORK_ERROR' failure types. The payment has a high ML recovery probability of 78.79% and has not been retried yet (retry count: 0). The customer's historical success rate (92.31%) also suggests the payment is likely legitimate. This action aims to capitalize on the high recovery probability for a typically transient error, with a significant expected recovery value of ₹29,539.00.
+
+RISK:
+Low. NETWORK_ERRORs are generally transient, and a retry carries minimal risk of a duplicate payment or negative customer impact. The primary risk is a second failure, requiring further action.
+
+AUTOMATIC_ACTION:
+YES",SUCCESS,,True,RETRY,Action passed all guardrail checks.,RECOVERED,Payment successfully recovered after retry.,37491.29
+2026-09-02T12:48:35.420241+00:00,PAY_007811,46180.49,TIMEOUT,0.621,28677.75,MEDIUM,"[""merchant_policies.md"", ""failure_reasons.md"", ""failure_reasons.md""]","[{""source"": ""merchant_policies.md"", ""text"": ""# Merchant Recovery Policies"", ""score"": 0.41001228405037105}, {""source"": ""failure_reasons.md"", ""text"": ""# Payment Failure Reasons"", ""score"": 0.2037007132352567}, {""source"": ""failure_reasons.md"", ""text"": ""## TIMEOUT\n\nThe payment request exceeded the allowed processing time.\n\nRecommended approach:\nRetry after a short delay.\n\nRecovery potential:\nHigh.\n\n---"", ""score"": 0.19920992128705362}]",RETRY,"FAILURE_EXPLANATION:
+The payment failed due to a TIMEOUT, indicating a temporary issue with the payment processing network or the bank's system.
+
+RECOMMENDED_ACTION:
+RETRY
+
+REASONING:
+The retrieved knowledge explicitly states that the RETRY strategy is ""Best suited for: TIMEOUT"" failure types. This payment has a failure type of TIMEOUT and a retry count of 0, meaning no previous attempts have been made. The ML recovery probability is a favorable 62.10%, suggesting a good chance of success on a retry. Given that TIMEOUTs are often transient issues, a reattempt is a safe and appropriate first recovery action.
+
+RISK:
+Low. A timeout is typically a temporary communication issue, and a retry carries minimal risk of adverse effects like duplicate payments or customer dissatisfaction, especially as it's the first retry attempt.
+
+AUTOMATIC_ACTION:
+YES",SUCCESS,,True,RETRY,Action passed all guardrail checks.,FAILED,Payment retry failed.,0.0
+2026-09-02T12:48:40.706118+00:00,PAY_018980,39635.41,NETWORK_ERROR,0.7173,28431.17,MEDIUM,"[""merchant_policies.md"", ""failure_reasons.md"", ""failure_reasons.md""]","[{""source"": ""merchant_policies.md"", ""text"": ""# Merchant Recovery Policies"", ""score"": 0.38638184031186057}, {""source"": ""failure_reasons.md"", ""text"": ""## EXPIRED_CARD\n\nThe customer's card has expired.\n\nRecommended approach:\nAsk the customer to update their payment method or provide\na payment link.\n\n---"", ""score"": 0.21050667556498046}, {""source"": ""failure_reasons.md"", ""text"": ""## NETWORK_ERROR\n\nThe payment could not be completed because of a temporary\nnetwork or connectivity issue.\n\nRecommended approach:\nRetry the payment after a short delay.\n\nRecovery potential:\nHigh.\n\n---"", ""score"": 0.19247860115347765}]",RETRY,"FAILURE_EXPLANATION:
+The payment failed due to a NETWORK_ERROR, indicating a temporary issue with the communication between systems. This is often a transient problem.
+
+RECOMMENDED_ACTION:
+RETRY
+
+REASONING:
+The payment failed due to a `NETWORK_ERROR`, which the retrieved knowledge explicitly states is ""Best suited for: RETRY"". The ML recovery probability is high at 71.73%, and this payment has not been retried yet (Retry count: 0). The failure type is not `SUSPECTED_FRAUD` or `DUPLICATE`, thus not falling under the ""Avoid when"" conditions for retry.
+
+RISK:
+Low. NETWORK_ERRORs are typically transient, and a retry has a good chance of success without adverse effects.
+
+AUTOMATIC_ACTION:
+YES",SUCCESS,,True,RETRY,Action passed all guardrail checks.,RECOVERED,Payment successfully recovered after retry.,39635.41
+2026-09-02T12:48:46.733858+00:00,PAY_010028,41656.77,TIMEOUT,0.6778,28235.53,MEDIUM,"[""merchant_policies.md"", ""failure_reasons.md"", ""failure_reasons.md""]","[{""source"": ""merchant_policies.md"", ""text"": ""# Merchant Recovery Policies"", ""score"": 0.41001228405037105}, {""source"": ""failure_reasons.md"", ""text"": ""# Payment Failure Reasons"", ""score"": 0.2037007132352567}, {""source"": ""failure_reasons.md"", ""text"": ""## TIMEOUT\n\nThe payment request exceeded the allowed processing time.\n\nRecommended approach:\nRetry after a short delay.\n\nRecovery potential:\nHigh.\n\n---"", ""score"": 0.19920992128705362}]",RETRY,"FAILURE_EXPLANATION:
+The payment failed due to a TIMEOUT, indicating a delay in communication or processing between systems.
+
+RECOMMENDED_ACTION:
+RETRY
+
+REASONING:
+The retrieved knowledge explicitly states that `RETRY` is ""Best suited for: TIMEOUT"" failures. This payment has a retry count of 0, meaning it's the first attempt at recovery for this specific failure. Given the ML recovery probability of 67.78% and the significant expected recovery value of ₹28,235.53, a direct retry is a safe and highly probable action to recover the payment without further customer intervention. The failure type is not SUSPECTED_FRAUD or DUPLICATE, which are conditions to avoid automatic retries.
+
+RISK:
+Low. A timeout often indicates a transient issue. A single retry has a high chance of success and minimal risk of customer frustration, especially since no previous retries have occurred.
+
+AUTOMATIC_ACTION:
+YES",SUCCESS,,True,RETRY,Action passed all guardrail checks.,FAILED,Payment retry failed.,0.0
+2026-09-02T12:48:51.924879+00:00,PAY_008033,41114.23,TIMEOUT,0.6726,27653.13,MEDIUM,"[""merchant_policies.md"", ""failure_reasons.md"", ""failure_reasons.md""]","[{""source"": ""merchant_policies.md"", ""text"": ""# Merchant Recovery Policies"", ""score"": 0.41001228405037105}, {""source"": ""failure_reasons.md"", ""text"": ""# Payment Failure Reasons"", ""score"": 0.2037007132352567}, {""source"": ""failure_reasons.md"", ""text"": ""## TIMEOUT\n\nThe payment request exceeded the allowed processing time.\n\nRecommended approach:\nRetry after a short delay.\n\nRecovery potential:\nHigh.\n\n---"", ""score"": 0.19920992128705362}]",RETRY,"FAILURE_EXPLANATION:
+The payment failed due to a timeout, indicating that the system did not receive a timely response from the payment method provider (UPI). This is often a transient issue.
+
+RECOMMENDED_ACTION:
+RETRY
+
+REASONING:
+The payment failed with a `TIMEOUT` failure type, and the retrieved knowledge explicitly states that `RETRY` is ""Best suited for: - TIMEOUT"". The ML recovery probability is a good 67.26%, and the expected recovery value is significant at ₹27,653.13. Given the low retry count (0), a retry is a safe and appropriate first step for this type of transient failure.
+
+RISK:
+Low. A retry for a timeout is generally considered low-risk, as the issue is often transient. There is a minor risk of a second failure, but it does not carry high financial or customer experience risks.
+
+AUTOMATIC_ACTION:
+YES",SUCCESS,,True,RETRY,Action passed all guardrail checks.,RECOVERED,Payment successfully recovered after retry.,41114.23
+2026-09-02T12:48:57.218470+00:00,PAY_005872,33410.39,NETWORK_ERROR,0.785,26225.58,MEDIUM,"[""merchant_policies.md"", ""failure_reasons.md"", ""failure_reasons.md""]","[{""source"": ""merchant_policies.md"", ""text"": ""# Merchant Recovery Policies"", ""score"": 0.41001228405037105}, {""source"": ""failure_reasons.md"", ""text"": ""## NETWORK_ERROR\n\nThe payment could not be completed because of a temporary\nnetwork or connectivity issue.\n\nRecommended approach:\nRetry the payment after a short delay.\n\nRecovery potential:\nHigh.\n\n---"", ""score"": 0.20425025882701986}, {""source"": ""failure_reasons.md"", ""text"": ""# Payment Failure Reasons"", ""score"": 0.2037007132352567}]",RETRY,"FAILURE_EXPLANATION:
+The payment failed due to a network error, which is typically a transient issue.
+
+RECOMMENDED_ACTION:
+RETRY
+
+REASONING:
+The payment failed due to a NETWORK_ERROR. According to the retrieved knowledge, RETRY is explicitly best suited for NETWORK_ERROR failures. The ML recovery probability is high at 78.50%, indicating a strong likelihood of success upon retry. This payment has not been retried before (Retry count: 0), and network errors are often temporary, making a retry a logical and effective first step.
+
+RISK:
+Low risk. Network errors are typically transient, and retrying the payment for such a failure type carries minimal risk of creating duplicate payments or customer frustration, especially since no previous retries have been attempted.
+
+AUTOMATIC_ACTION:
+YES",SUCCESS,,True,RETRY,Action passed all guardrail checks.,FAILED,Payment retry failed.,0.0
+2026-09-02T12:49:04.438058+00:00,PAY_004601,33938.6,NETWORK_ERROR,0.7366,24999.99,MEDIUM,"[""merchant_policies.md"", ""failure_reasons.md"", ""failure_reasons.md""]","[{""source"": ""merchant_policies.md"", ""text"": ""# Merchant Recovery Policies"", ""score"": 0.41001228405037105}, {""source"": ""failure_reasons.md"", ""text"": ""## NETWORK_ERROR\n\nThe payment could not be completed because of a temporary\nnetwork or connectivity issue.\n\nRecommended approach:\nRetry the payment after a short delay.\n\nRecovery potential:\nHigh.\n\n---"", ""score"": 0.20425025882701986}, {""source"": ""failure_reasons.md"", ""text"": ""# Payment Failure Reasons"", ""score"": 0.2037007132352567}]",RETRY,"FAILURE_EXPLANATION:
+The payment failed due to a NETWORK_ERROR, indicating a temporary issue with the connection or service availability during the transaction.
+
+RECOMMENDED_ACTION:
+RETRY
+
+REASONING:
+The retrieved knowledge explicitly states that 'RETRY' is best suited for 'NETWORK_ERROR' failure types. This payment has a retry count of 0, meaning no previous attempts have been made to reprocess it. The ML recovery probability is high at 73.66%, further supporting the likelihood of success with a retry. This action does not fall under the conditions to avoid automatic retry (SUSPECTED_FRAUD or DUPLICATE).
+
+RISK:
+Low risk. NETWORK_ERRORs are typically transient, and a retry has a good chance of success given the high ML recovery probability without adverse side effects.
+
+AUTOMATIC_ACTION:
+YES",SUCCESS,,True,RETRY,Action passed all guardrail checks.,FAILED,Payment retry failed.,0.0
+2026-09-02T12:49:09.992841+00:00,PAY_005565,34855.96,TIMEOUT,0.6711,23392.56,MEDIUM,"[""merchant_policies.md"", ""failure_reasons.md"", ""failure_reasons.md""]","[{""source"": ""merchant_policies.md"", ""text"": ""# Merchant Recovery Policies"", ""score"": 0.41001228405037105}, {""source"": ""failure_reasons.md"", ""text"": ""# Payment Failure Reasons"", ""score"": 0.2037007132352567}, {""source"": ""failure_reasons.md"", ""text"": ""## TIMEOUT\n\nThe payment request exceeded the allowed processing time.\n\nRecommended approach:\nRetry after a short delay.\n\nRecovery potential:\nHigh.\n\n---"", ""score"": 0.19920992128705362}]",RETRY,"FAILURE_EXPLANATION: The payment failed due to a timeout, indicating a potential temporary communication issue during the transaction.
+
+RECOMMENDED_ACTION: RETRY
+
+REASONING: The retrieved knowledge explicitly states that 'RETRY' is best suited for 'TIMEOUT' failure types. The ML model predicts a 67.11% recovery probability, leading to an expected recovery value of ₹23,392.56, which is significant. This is the first recovery attempt (retry count is 0).
+
+RISK: Low. Retrying a TIMEOUT payment is generally safe as it typically addresses transient network or system issues, and there are no indicators of fraud or duplicate payment.
+
+AUTOMATIC_ACTION: YES",SUCCESS,,True,RETRY,Action passed all guardrail checks.,RECOVERED,Payment successfully recovered after retry.,34855.96
+2026-09-02T12:49:16.104120+00:00,PAY_007730,58211.22,INSUFFICIENT_FUNDS,0.4008,23328.76,MEDIUM,"[""merchant_policies.md"", ""recovery_strategies.md"", ""failure_reasons.md""]","[{""source"": ""merchant_policies.md"", ""text"": ""# Merchant Recovery Policies"", ""score"": 0.4385865220303444}, {""source"": ""recovery_strategies.md"", ""text"": ""## NOTIFICATION\n\nNotify the customer that their payment failed and\nprovide instructions or an alternative payment method.\n\nBest suited for:\n- INSUFFICIENT_FUNDS\n\n---"", ""score"": 0.23232155357921253}, {""source"": ""failure_reasons.md"", ""text"": ""# Payment Failure Reasons"", ""score"": 0.21789685535854844}]",NOTIFICATION,"FAILURE_EXPLANATION: The payment failed because of insufficient funds in the customer's account. This was the first attempt (retry count: 0).
+
+RECOMMENDED_ACTION: NOTIFICATION
+
+REASONING: The retrieved knowledge explicitly recommends 'NOTIFICATION' as ""Best suited for: - INSUFFICIENT_FUNDS"". This action involves informing the customer about the payment failure and providing them with instructions or an alternative payment method, which directly addresses the 'INSUFFICIENT_FUNDS' reason. Given the ML recovery probability of 40.08% and a significant expected recovery value of ₹23,328.76, engaging the customer with a notification is a safe and effective initial step to recover the payment.
+
+RISK: Low risk. This approach is customer-centric, aims to resolve the issue by providing options to the customer, and does not involve an automatic retry which could fail again for the same reason.
+
+AUTOMATIC_ACTION: YES",SUCCESS,,True,NOTIFICATION,Action passed all guardrail checks.,NOTIFICATION_SENT,Recovery notification sent to customer.,0.0
+2026-09-02T12:49:40.295578+00:00,PAY_004769,60063.19,NETWORK_ERROR,0.7748,46537.11,HIGH,"[""merchant_policies.md"", ""failure_reasons.md"", ""failure_reasons.md""]","[{""source"": ""merchant_policies.md"", ""text"": ""# Merchant Recovery Policies"", ""score"": 0.41001228405037105}, {""source"": ""failure_reasons.md"", ""text"": ""## NETWORK_ERROR\n\nThe payment could not be completed because of a temporary\nnetwork or connectivity issue.\n\nRecommended approach:\nRetry the payment after a short delay.\n\nRecovery potential:\nHigh.\n\n---"", ""score"": 0.20425025882701986}, {""source"": ""failure_reasons.md"", ""text"": ""# Payment Failure Reasons"", ""score"": 0.2037007132352567}]",RETRY,"FAILURE_EXPLANATION:
+The payment failed due to a NETWORK_ERROR, indicating a transient issue likely related to communication between systems, rather than a problem with the payment method itself.
+
+RECOMMENDED_ACTION:
+RETRY
+
+REASONING:
+The payment failed with a `NETWORK_ERROR`, which the retrieved knowledge explicitly identifies as a type of failure for which `RETRY` is ""Best suited"". The payment has not been retried yet (retry count 0). The ML model calculates a high recovery probability of 77.48% and a significant expected recovery value of ₹46,537.11, making a retry a high-value action. The failure is not `SUSPECTED_FRAUD` or `DUPLICATE`, which are conditions where automatic retry should be avoided according to policy.
+
+RISK:
+Low risk. Network errors are often temporary, and a retry is likely to succeed without adverse effects. There is no indication of customer or merchant-specific issues that would suggest a retry is inappropriate.
+
+AUTOMATIC_ACTION:
+YES",SUCCESS,,True,RETRY,Action passed all guardrail checks.,RECOVERED,Payment successfully recovered after retry.,60063.19
+2026-09-02T12:50:09.450193+00:00,PAY_004769,60063.19,NETWORK_ERROR,0.7748,46537.11,HIGH,"[""merchant_policies.md"", ""failure_reasons.md"", ""failure_reasons.md""]","[{""source"": ""merchant_policies.md"", ""text"": ""# Merchant Recovery Policies"", ""score"": 0.41001228405037105}, {""source"": ""failure_reasons.md"", ""text"": ""## NETWORK_ERROR\n\nThe payment could not be completed because of a temporary\nnetwork or connectivity issue.\n\nRecommended approach:\nRetry the payment after a short delay.\n\nRecovery potential:\nHigh.\n\n---"", ""score"": 0.20425025882701986}, {""source"": ""failure_reasons.md"", ""text"": ""# Payment Failure Reasons"", ""score"": 0.2037007132352567}]",RETRY,"FAILURE_EXPLANATION:
+The payment failed due to a NETWORK_ERROR, indicating a temporary connectivity issue during processing.
+
+RECOMMENDED_ACTION:
+RETRY
+
+REASONING:
+The payment failed with a `NETWORK_ERROR`. According to the retrieved recovery strategies, `RETRY` is explicitly recommended as ""Best suited for: - NETWORK_ERROR"". This payment currently has a retry count of 0, meaning it has not been attempted again. The ML model predicts a high recovery probability of 77.48%, supporting the potential success of a retry.
+
+RISK:
+Low risk. Network errors are typically transient, and a retry often resolves the issue. There is no indication of fraud or duplicate payment which would make a retry unsuitable.
+
+AUTOMATIC_ACTION:
+YES",SUCCESS,,True,RETRY,Action passed all guardrail checks.,RECOVERED,Payment successfully recovered after retry.,60063.19
+2026-09-04T17:59:46.113738+00:00,PAY_004769,60063.19,NETWORK_ERROR,0.7748,46537.11,HIGH,"[""merchant_policies.md"", ""failure_reasons.md"", ""failure_reasons.md""]","[{""source"": ""merchant_policies.md"", ""text"": ""# Merchant Recovery Policies"", ""score"": 0.41001228405037105}, {""source"": ""failure_reasons.md"", ""text"": ""## NETWORK_ERROR\n\nThe payment could not be completed because of a temporary\nnetwork or connectivity issue.\n\nRecommended approach:\nRetry the payment after a short delay.\n\nRecovery potential:\nHigh.\n\n---"", ""score"": 0.20425025882701986}, {""source"": ""failure_reasons.md"", ""text"": ""# Payment Failure Reasons"", ""score"": 0.2037007132352567}]",RETRY,"FAILURE_EXPLANATION:
+The payment failed due to a NETWORK_ERROR, indicating a temporary technical issue during processing.
+
+RECOMMENDED_ACTION:
+RETRY
+
+REASONING:
+The payment failed due to a `NETWORK_ERROR`. According to the retrieved recovery strategies, `RETRY` is explicitly identified as ""Best suited for: NETWORK_ERROR"". This type of error is often transient, and a retry has a high probability of success, as indicated by the ML recovery probability of 77.48%. The payment also has a retry count of 0, meaning no prior attempts have been made for recovery.
+
+RISK:
+Low risk. Network errors are typically temporary, and a retry often resolves the issue without negative customer impact.
+
+AUTOMATIC_ACTION:
+YES",SUCCESS,,True,RETRY,Action passed all guardrail checks.,RECOVERED,Payment successfully recovered after retry.,60063.19
+2026-09-04T17:59:51.427622+00:00,PAY_017627,37491.29,NETWORK_ERROR,0.7879,29539.0,MEDIUM,"[""merchant_policies.md"", ""failure_reasons.md"", ""failure_reasons.md""]","[{""source"": ""merchant_policies.md"", ""text"": ""# Merchant Recovery Policies"", ""score"": 0.41001228405037105}, {""source"": ""failure_reasons.md"", ""text"": ""## NETWORK_ERROR\n\nThe payment could not be completed because of a temporary\nnetwork or connectivity issue.\n\nRecommended approach:\nRetry the payment after a short delay.\n\nRecovery potential:\nHigh.\n\n---"", ""score"": 0.20425025882701986}, {""source"": ""failure_reasons.md"", ""text"": ""# Payment Failure Reasons"", ""score"": 0.2037007132352567}]",RETRY,"FAILURE_EXPLANATION:
+The payment failed due to a NETWORK_ERROR, indicating a temporary technical issue during the transaction process.
+
+RECOMMENDED_ACTION:
+RETRY
+
+REASONING:
+The retrieved knowledge explicitly states that 'RETRY' is best suited for 'NETWORK_ERROR' failure types. The ML model calculates a high recovery probability of 78.79%, suggesting a good chance of success upon retrying. This payment is not a 'SUSPECTED_FRAUD' or 'DUPLICATE', which are conditions to avoid automatic retry according to the retrieved policies. The retry count is 0, meaning this is the first attempt at recovery for this specific failure.
+
+RISK:
+Low risk, as NETWORK_ERROR typically indicates a transient issue and is not associated with customer intent problems or fraud.
+
+AUTOMATIC_ACTION:
+YES",SUCCESS,,True,RETRY,Action passed all guardrail checks.,FAILED,Payment retry failed.,0.0
+2026-09-04T17:59:57.944881+00:00,PAY_007811,46180.49,TIMEOUT,0.621,28677.75,MEDIUM,"[""merchant_policies.md"", ""failure_reasons.md"", ""failure_reasons.md""]","[{""source"": ""merchant_policies.md"", ""text"": ""# Merchant Recovery Policies"", ""score"": 0.41001228405037105}, {""source"": ""failure_reasons.md"", ""text"": ""# Payment Failure Reasons"", ""score"": 0.2037007132352567}, {""source"": ""failure_reasons.md"", ""text"": ""## TIMEOUT\n\nThe payment request exceeded the allowed processing time.\n\nRecommended approach:\nRetry after a short delay.\n\nRecovery potential:\nHigh.\n\n---"", ""score"": 0.19920992128705362}]",RETRY,"FAILURE_EXPLANATION: The payment for ₹46,180.49 failed due to a `TIMEOUT` during processing, indicating a potential temporary network or system issue. This was the first attempt.
+
+RECOMMENDED_ACTION: RETRY
+
+REASONING: The payment failed with a `TIMEOUT` error, and the retrieved knowledge explicitly states that `RETRY` is ""Best suited for: - TIMEOUT"". This payment has a retry count of 0, meaning it's the initial recovery attempt. There are no indicators of `SUSPECTED_FRAUD` or `DUPLICATE` payments, which are conditions to avoid retrying. The ML recovery probability is 62.10%, which is a strong indicator for a successful recovery attempt.
+
+RISK: Low. `TIMEOUT` errors are often transient, and a retry has a good chance of success without negative customer impact, especially given the high customer and merchant historical success rates.
+
+AUTOMATIC_ACTION: YES",SUCCESS,,True,RETRY,Action passed all guardrail checks.,RECOVERED,Payment successfully recovered after retry.,46180.49
+2026-09-04T18:00:03.706198+00:00,PAY_018980,39635.41,NETWORK_ERROR,0.7173,28431.17,MEDIUM,"[""merchant_policies.md"", ""failure_reasons.md"", ""failure_reasons.md""]","[{""source"": ""merchant_policies.md"", ""text"": ""# Merchant Recovery Policies"", ""score"": 0.38638184031186057}, {""source"": ""failure_reasons.md"", ""text"": ""## EXPIRED_CARD\n\nThe customer's card has expired.\n\nRecommended approach:\nAsk the customer to update their payment method or provide\na payment link.\n\n---"", ""score"": 0.21050667556498046}, {""source"": ""failure_reasons.md"", ""text"": ""## NETWORK_ERROR\n\nThe payment could not be completed because of a temporary\nnetwork or connectivity issue.\n\nRecommended approach:\nRetry the payment after a short delay.\n\nRecovery potential:\nHigh.\n\n---"", ""score"": 0.19247860115347765}]",RETRY,"FAILURE_EXPLANATION: The payment failed due to a NETWORK_ERROR, indicating a temporary issue during the transaction process, likely with the network connectivity or payment gateway.
+
+RECOMMENDED_ACTION: RETRY
+
+REASONING: The retrieved knowledge explicitly states that `RETRY` is ""Best suited for: NETWORK_ERROR"". This type of failure is typically transient and often resolves itself upon re-attempting the transaction. The payment has a high ML recovery probability of 71.73% and has not been retried yet (retry count 0). Given the nature of the error and the high recovery probability, a retry is the most appropriate and effective first step.
+
+RISK: Low risk. Network errors are generally temporary and do not indicate fundamental issues with the payment method or customer. A retry is a safe action with a high probability of success for this failure type.
+
+AUTOMATIC_ACTION: YES",SUCCESS,,True,RETRY,Action passed all guardrail checks.,RECOVERED,Payment successfully recovered after retry.,39635.41
