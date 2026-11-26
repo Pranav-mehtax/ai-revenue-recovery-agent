@@ -6,3 +6,5 @@ scikit-learn>=1.5,<2
 joblib>=1.4,<2
 google-genai>=1.0,<2
 python-dotenv>=1.0,<2
+chromadb>=0.5,<1
+sentence-transformers>=3.0,<4

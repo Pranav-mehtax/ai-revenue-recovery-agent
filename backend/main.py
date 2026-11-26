@@ -1,11 +1,13 @@
 """FastAPI entry point for the simulated Revenue Recovery Agent."""
 # pyrefly: ignore [missing-import]
 from fastapi import FastAPI, HTTPException, Query
+from backend.api.demo_routes import router as demo_router
 from backend.agent.recovery_pipeline import (
     get_payment, load_prioritized_payments, metrics, process_batch, process_payment_id, read_audit,
 )
 
 app = FastAPI(title="AI Revenue Recovery Agent", version="1.0.0")
+app.include_router(demo_router)
 
 @app.get("/health")
 def health():

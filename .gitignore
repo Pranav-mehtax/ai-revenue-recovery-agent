@@ -4,3 +4,8 @@ venv/
 __pycache__/
 *.pyc
 .streamlit/secrets.toml
+rag/chroma_store/
+_audit/async*_err.txt
+_audit/async*_out.txt
+_audit/run_output.txt
+*.jsonl

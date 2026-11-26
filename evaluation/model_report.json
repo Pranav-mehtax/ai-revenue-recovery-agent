@@ -1,0 +1,160 @@
+{
+  "dataset": {
+    "failed_payments": 14935,
+    "train": 10432,
+    "validation": 2214,
+    "test": 2289,
+    "customers": 4736,
+    "base_recovery_rate": 0.6130176380368099,
+    "split": "by customer (GroupShuffleSplit), 70/15/15"
+  },
+  "production_model": {
+    "name": "Random Forest",
+    "source": "ml/recovery_model.joblib",
+    "test": {
+      "auc": 0.731994698687446,
+      "log_loss": 0.608150415048943,
+      "brier": 0.2098460688445166,
+      "brier_skill": 0.12243360033768491,
+      "ece": 0.09381256610434127,
+      "precision@0.5": 0.7526020816653323,
+      "recall@0.5": 0.6791907514450867,
+      "f1@0.5": 0.7140144322066084,
+      "accuracy@0.5": 0.6710353866317169
+    }
+  },
+  "selection": {
+    "best_by_validation_log_loss": "XGBoost",
+    "best_by_test_auc": "Random Forest",
+    "train_model_py_rule": "highest test ROC-AUC"
+  },
+  "calibration_in_the_large": {
+    "expected_recovered_rupees": 4396508.996150617,
+    "actual_recovered_rupees": 5385885.5,
+    "ratio_expected_over_actual": 0.8163019797117144
+  },
+  "top_features": [
+    {
+      "feature": "failure_type",
+      "auc_drop": 0.18113531121259535
+    },
+    {
+      "feature": "retry_count",
+      "auc_drop": 0.019470028422699737
+    },
+    {
+      "feature": "customer_success_rate",
+      "auc_drop": 0.008062945102672924
+    },
+    {
+      "feature": "merchant_recovery_rate",
+      "auc_drop": 0.002356289719924587
+    },
+    {
+      "feature": "payment_method",
+      "auc_drop": 0.00200843100309771
+    }
+  ],
+  "group_importance": [
+    {
+      "group": "Payment details",
+      "auc_drop": 0.20278766007728413,
+      "std": 0.011732982100080494
+    },
+    {
+      "group": "Customer history",
+      "auc_drop": 0.03219174144923827,
+      "std": 0.005385425137739657
+    },
+    {
+      "group": "Merchant profile",
+      "auc_drop": 0.0036715581387921302,
+      "std": 0.0015795539874332084
+    },
+    {
+      "group": "Time of day and week",
+      "auc_drop": 0.0003801935298437864,
+      "std": 0.0004477663463282858
+    }
+  ],
+  "ablation": [
+    {
+      "variant": "All features (production)",
+      "test_auc": 0.731353591160221,
+      "log_loss": 0.6103394748065696,
+      "brier": 0.21085177719021295,
+      "auc_change": 0.0
+    },
+    {
+      "variant": "Without: Payment details",
+      "test_auc": 0.5716036470475521,
+      "log_loss": 0.6830088157163486,
+      "brier": 0.2448042993137859,
+      "auc_change": -0.15974994411266896
+    },
+    {
+      "variant": "Without: Customer history",
+      "test_auc": 0.7160228978379587,
+      "log_loss": 0.6179786756419978,
+      "brier": 0.21427322836569745,
+      "auc_change": -0.015330693322262334
+    },
+    {
+      "variant": "Without: Merchant profile",
+      "test_auc": 0.7300490211733146,
+      "log_loss": 0.6100693454238001,
+      "brier": 0.2107777882696504,
+      "auc_change": -0.0013045699869064231
+    },
+    {
+      "variant": "Without: Time of day and week",
+      "test_auc": 0.7303619902277009,
+      "log_loss": 0.6094974146968368,
+      "brier": 0.21056662374656604,
+      "auc_change": -0.0009916009325201536
+    },
+    {
+      "variant": "Without merchant_recovery_rate only",
+      "test_auc": 0.7287204994730624,
+      "log_loss": 0.6117235271315953,
+      "brier": 0.21147054073133995,
+      "auc_change": -0.0026330916871586396
+    },
+    {
+      "variant": "Without both merchant rates",
+      "test_auc": 0.7304825471848752,
+      "log_loss": 0.6106466870466446,
+      "brier": 0.21100175903423768,
+      "auc_change": -0.0008710439753458754
+    }
+  ],
+  "leakage_check_merchant_recovery_rate": {
+    "merchants": 100,
+    "mean_abs_diff_vs_observed": 0.08089688681669234,
+    "correlation": 0.6251948347881694,
+    "expected_sampling_noise": 0.03969309068841575,
+    "looks_computed_from_these_outcomes": false
+  },
+  "priority_capture_top20": {
+    "Expected value: amount x probability (current)": 0.5665405475107107,
+    "Probability only": 0.25588744506358335,
+    "Amount only": 0.5509015202792561,
+    "Oracle (knows the outcome)": 0.6837664020150446,
+    "Random order": 0.2
+  },
+  "current_tier_counts": {
+    "HIGH": 6,
+    "MEDIUM": 29,
+    "LOW": 2254
+  },
+  "figures": [
+    "01_model_comparison.png",
+    "02_roc_curves.png",
+    "03_calibration.png",
+    "04_feature_importance.png",
+    "05_feature_groups_and_ablation.png",
+    "06_actual_vs_predicted_by_segment.png",
+    "07_priority_capture_curve.png",
+    "08_priority_tiers.png"
+  ]
+}
